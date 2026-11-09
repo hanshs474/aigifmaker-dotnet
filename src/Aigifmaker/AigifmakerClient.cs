@@ -162,7 +162,7 @@ namespace Aigifmaker
         readonly string _base;
 
         /// <summary>How long <see cref="GenerateAsync"/> waits for a GIF. Defaults to 5 minutes.</summary>
-        public TimeSpan Timeout { get; set; } = TimeSpan.FromMinutes(5);
+        public TimeSpan Timeout { get; set; } = TimeSpan.FromMinutes(15);
         /// <summary>How often the status is checked while waiting. Defaults to 3 seconds.</summary>
         public TimeSpan PollEvery { get; set; } = TimeSpan.FromSeconds(3);
 

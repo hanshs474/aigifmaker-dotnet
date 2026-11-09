@@ -47,7 +47,7 @@ int left = await gifs.CreditsAsync();            // free to call
 
 Accounts that have not bought credits yet may wait in a short queue: `StatusAsync` then reports `processing` with `Queued == true` and `QueueEta` in seconds. That is normal; keep polling.
 
-`GenerateAsync` polls every 3 seconds and gives up after 5 minutes. Change that with the `timeout` constructor argument or the `Timeout` and `PollEvery` properties. Every method takes a `CancellationToken`.
+`GenerateAsync` polls every 3 seconds and gives up after 15 minutes. Change that with the `timeout` constructor argument or the `Timeout` and `PollEvery` properties. Every method takes a `CancellationToken`.
 
 ```csharp
 var gifs = new AigifmakerClient(apiKey: "sk-...", timeout: TimeSpan.FromMinutes(10));
