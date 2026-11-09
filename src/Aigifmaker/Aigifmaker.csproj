@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;netstandard2.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <PackageId>Aigifmaker</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>hanshs474</Authors>
+    <Title>AI GIF Maker SDK</Title>
+    <Description>Official SDK for AI GIF Maker (aigifmaker.ai): turn text into animated GIFs.</Description>
+    <PackageTags>gif;gif-maker;ai-gif;text-to-gif;animated-gif;aigifmaker</PackageTags>
+    <PackageProjectUrl>https://aigifmaker.ai/?utm_source=nuget&amp;utm_medium=package</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/hanshs474/aigifmaker-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+</Project>

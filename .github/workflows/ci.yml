@@ -1,0 +1,16 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Unit tests (mocked)
+        run: dotnet run --project tests/Aigifmaker.Tests
+      - name: Live smoke (free, no real key)
+        run: dotnet run --project examples/Smoke
+      - name: Pack
+        run: dotnet pack src/Aigifmaker -c Release -o out
